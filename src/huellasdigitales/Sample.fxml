@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="588.0" prefWidth="931.0" xmlns:fx="http://javafx.com/fxml" fx:controller="huellasdigitales.SampleController">
+  <children>
+    <Pane fx:id="pan2" prefHeight="588.0" prefWidth="930.0">
+      <children>
+        <Rectangle fx:id="rectangulo" arcHeight="50.0" arcWidth="50.0" fill="linear-gradient(from 0.0% 0.0% to 0.0% 100.0%, 0xfdfdfdff 0.0%, 0xcececeff 100.0%)" height="588.0" layoutX="2.0" stroke="BLACK" strokeType="INSIDE" width="930.0" />
+        <Pane fx:id="topright" layoutX="374.0" layoutY="-1.0" prefHeight="50.0" prefWidth="558.0">
+          <children>
+            <Button fx:id="c1" layoutX="525.0" layoutY="1.0" mnemonicParsing="false" onAction="#salir" text="x" />
+            <Button fx:id="c2" layoutX="496.0" layoutY="1.0" minHeight="24.62109375" mnemonicParsing="false" onAction="#minimizar" prefHeight="24.62109375" text="_" />
+            <ImageView fitHeight="36.9609375" fitWidth="36.9609375" layoutX="46.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@icono.png" preserveRatio="false" smooth="false" />
+              </image>
+            </ImageView>
+            <Label layoutX="91.0" layoutY="10.0" prefHeight="30.4814453125" prefWidth="301.0" text="Validador de firmas digitales" textAlignment="CENTER" wrapText="true">
+              <font>
+                <Font name="Georgia" size="18.0" fx:id="x4" />
+              </font>
+              <textFill>
+                <Color blue="0.200" green="0.000" red="0.161" fx:id="x5" />
+              </textFill>
+            </Label>
+          </children>
+        </Pane>
+        <Rectangle arcHeight="50.0" arcWidth="50.0" fill="linear-gradient(from 0.0% 0.0% to 0.0% 100.0%, 0xffffffff 0.0%, 0xf9f9f9ff 100.0%)" height="489.0" layoutX="205.0" layoutY="90.0" stroke="#00000019" strokeType="INSIDE" width="714.0" />
+        <Button layoutX="11.0" layoutY="92.0" mnemonicParsing="false" onAction="#firmar" prefHeight="50.0" prefWidth="182.0" text="Firmar una imagen" />
+        <Button cancelButton="true" layoutX="11.0" layoutY="142.0" mnemonicParsing="false" onAction="#verificar" prefHeight="50.0" prefWidth="182.0" text="Verificar firma" />
+        <Button layoutX="11.0" layoutY="194.0" mnemonicParsing="false" onAction="#documentos" prefHeight="50.0" prefWidth="182.0" text="Mis Documentos" wrapText="true" />
+        <Label fx:id="avatar" layoutX="20.0" layoutY="22.0" prefHeight="50.0" prefWidth="50.0" />
+        <Label fx:id="nombre" layoutX="88.0" layoutY="26.0" text="Carlos Escobar" />
+        <Label layoutX="88.0" layoutY="49.0" text="Usuario" />
+        <Pane fx:id="firmar" layoutX="216.0" layoutY="104.0" prefHeight="445.0" prefWidth="687.0">
+          <children>
+            <Label fx:id="titulo" layoutX="14.0" layoutY="14.0" text="Firmar una imagen" />
+            <Button fx:id="bsencillo" layoutX="578.0" layoutY="24.0" mnemonicParsing="false" onAction="#irmodosencillo" text="Modo sencillo" />
+            <Pane fx:id="sencillo" layoutX="14.0" layoutY="60.0" prefHeight="351.0" prefWidth="664.0">
+              <children>
+                <Button layoutX="227.0" layoutY="43.0" mnemonicParsing="false" text="Examinar archivo" />
+                <Label layoutX="106.0" layoutY="45.0" text="Seleccionar imagen:" />
+                <Label layoutX="106.0" layoutY="72.0" text="Contraseña:" />
+                <PasswordField layoutX="226.0" layoutY="69.0" prefWidth="148.0" />
+                <Label layoutX="106.0" layoutY="101.0" text="XML">
+                  <font>
+                    <Font name="System Bold" size="12.0" />
+                  </font>
+                </Label>
+                <Button fx:id="agregarfila" layoutX="146.0" layoutY="98.0" mnemonicParsing="false" onAction="#addfila" text="Agregar fila" />
+                <Button layoutX="584.0" layoutY="316.0" mnemonicParsing="false" onAction="#enviarfirma" text="Enviar" />
+              </children>
+            </Pane>
+            <Pane fx:id="dragdrop" layoutX="14.0" layoutY="60.0" prefHeight="351.0" prefWidth="664.0" visible="false">
+              <Label fx:id="drop" layoutX="42.0" layoutY="46.0" prefHeight="360.0" prefWidth="517.0" text="Arrastra una imagen aquí para firmarla." textAlignment="CENTER">
+                <font>
+                  <Font size="19.0" />
+                </font>
+              </Label>
+            </Pane>
+          </children>
+        </Pane>
+        <Pane fx:id="verificar" layoutX="216.0" layoutY="104.0" prefHeight="445.0" prefWidth="687.0" visible="false">
+          <children>
+            <Label fx:id="titulo" layoutX="14.0" layoutY="14.0" text="Verificar firma" />
+          </children>
+        </Pane>
+        <Pane fx:id="documentos" layoutX="216.0" layoutY="104.0" prefHeight="445.0" prefWidth="687.0" visible="false">
+          <children>
+            <Label fx:id="titulo" layoutX="14.0" layoutY="14.0" text="Mis Documentos" />
+          </children>
+        </Pane>
+        <Label fx:id="descripcion" alignment="TOP_CENTER" layoutX="14.0" layoutY="367.0" prefHeight="163.0" prefWidth="182.0" textAlignment="CENTER" wrapText="true" />
+        <ImageView fx:id="img" fitHeight="115.0" fitWidth="182.0" layoutX="14.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="perf1" fitHeight="34.09089167072742" fitWidth="24.999988555908203" layoutX="886.0" layoutY="53.0" onMouseClicked="#perfil" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@engrane.png" preserveRatio="false" smooth="false" />
+          </image>
+        </ImageView>
+        <Label fx:id="perf2" layoutX="849.0" layoutY="59.0" onMouseClicked="#perfil" text="Perfil">
+          <font>
+            <Font size="14.0" />
+          </font>
+        </Label>
+      </children>
+    </Pane>
+    <Pane fx:id="pan1" layoutX="317.0" layoutY="110.0" prefHeight="360.0" prefWidth="400.0">
+      <children>
+        <Rectangle arcHeight="50.0" arcWidth="50.0" fill="linear-gradient(from 0.0% 0.0% to 0.0% 100.0%, 0xfdfdfdff 0.0%, 0xcececeff 100.0%)" height="304.0" layoutX="50.0" layoutY="29.0" stroke="GREY" strokeType="INSIDE" strokeWidth="0.7" width="308.0" />
+        <ImageView fitHeight="67.0" fitWidth="67.0" layoutX="72.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@icono.png" preserveRatio="false" smooth="false" />
+          </image>
+        </ImageView>
+        <Label font="$x4" layoutX="150.0" layoutY="45.0" prefHeight="60.0" prefWidth="186.0" text="Validador de firmas digitales" textAlignment="CENTER" textFill="$x5" wrapText="true" />
+        <Separator layoutX="71.0" layoutY="119.0" prefWidth="273.0" />
+        <Pane fx:id="iniciar" layoutX="71.0" layoutY="122.0" prefHeight="200.0" prefWidth="266.0">
+          <children>
+            <PasswordField fx:id="usuarioIjpf" layoutX="91.0" layoutY="72.0" prefWidth="170.0" />
+            <Label layoutX="12.0" layoutY="75.0" text="Contraseña:" />
+            <Label layoutX="12.0" layoutY="7.0" text="Iniciar Sesión">
+              <font>
+                <Font name="Georgia" size="20.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="47.0" text="Usuario:" />
+            <Button fx:id="in" layoutX="193.0" layoutY="113.0" mnemonicParsing="false" onAction="#entrar" text="Logearse" />
+            <TextField fx:id="usuarioIjtf" layoutX="93.0" layoutY="45.0" prefWidth="170.0" />
+            <Label layoutX="3.0" layoutY="156.0" prefHeight="36.9609375" prefWidth="258.0" text="Creado por Carlos Escobar, Uriel Hernandez y Juan Hernandez" wrapText="true">
+              <textFill>
+                <Color blue="0.376" green="0.376" red="0.376" fx:id="x2" />
+              </textFill>
+            </Label>
+            <Separator layoutX="176.0" layoutY="111.0" orientation="VERTICAL" prefHeight="30.4814453125" />
+            <Label layoutX="64.0" layoutY="116.0" onMouseClicked="#irnuevo" text="¿Nuevo? Registrate" underline="true">
+              <textFill>
+                <Color blue="0.200" green="0.000" red="0.016" fx:id="x3" />
+              </textFill>
+            </Label>
+          </children>
+        </Pane>
+        <Pane fx:id="nueva" layoutX="70.0" layoutY="122.0" prefHeight="200.0" prefWidth="266.0" visible="false">
+          <children>
+            <PasswordField fx:id="usuariopf" layoutX="91.0" layoutY="72.0" prefWidth="170.0" />
+            <Label layoutX="12.0" layoutY="75.0" text="Contraseña:" />
+            <Label font="$x1" layoutX="12.0" layoutY="7.0" text="Nueva Cuenta" />
+            <Label layoutX="11.0" layoutY="47.0" text="Usuario:" />
+            <Button id="in" layoutX="169.0" layoutY="132.0" mnemonicParsing="false" onAction="#confirmar" text="Nueva cuenta" />
+            <TextField fx:id="usuariojtf" layoutX="91.0" layoutY="45.0" prefWidth="170.0" />
+            <Label layoutX="4.0" layoutY="163.0" prefHeight="36.9609375" prefWidth="258.0" text="Creado por Carlos Escobar, Uriel Hernandez y Juan Hernandez" textFill="$x2" wrapText="true" />
+            <Separator layoutX="150.0" layoutY="127.0" orientation="VERTICAL" prefHeight="30.4814453125" />
+            <Label layoutX="14.0" layoutY="134.0" onMouseClicked="#iriniciar" text="¿Tienes cuenta? Logeate" textFill="$x3" underline="true" />
+            <PasswordField fx:id="usuariopf1" layoutX="91.0" layoutY="100.0" prefWidth="170.0" />
+            <Label layoutX="14.0" layoutY="100.0" text="Confirma la" />
+            <Label layoutX="14.0" layoutY="111.0" text="contraseña" />
+          </children>
+        </Pane>
+        <Button id="c1" layoutX="327.0" layoutY="29.0" mnemonicParsing="false" onAction="#salir" text="x" />
+        <Pane fx:id="paneconfirm" layoutX="72.0" layoutY="122.0" prefHeight="200.0" prefWidth="264.0" visible="false">
+          <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Te recordamos que el máximo de caracteres" />
+            <Label layoutX="14.0" layoutY="30.0" text="admitido es 100 para el usuario y 45 para la" />
+            <Label layoutX="14.0" layoutY="46.0" text="contraseña." />
+            <Label layoutX="14.0" layoutY="84.0" text="¿Deseas continuar con tu registro?" />
+            <Label layoutX="14.0" layoutY="62.0" text="De lo contrario no podrás registrarte." />
+            <Button layoutX="14.0" layoutY="129.0" mnemonicParsing="false" onAction="#RegistroIgnorado" prefWidth="67.0" text="Cancelar" />
+            <Button layoutX="135.0" layoutY="129.0" mnemonicParsing="false" onAction="#RegistroCompletado" prefWidth="67.0" text="Aceptar" />
+          </children>
+        </Pane>
+      </children>
+    </Pane>
+  </children>
+  <stylesheets>
+    <URL value="@StyleSheet.css" />
+  </stylesheets>
+</AnchorPane>

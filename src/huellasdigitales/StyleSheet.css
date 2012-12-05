@@ -1,0 +1,49 @@
+/* 
+    Document   : StyleSheet
+    Created on : 23/11/2012, 06:45:15 PM
+    Author     : CarlosEscobar
+    Description:
+        Purpose of the stylesheet follows.
+*/
+#drop{
+    -fx-background-color: linear-gradient(#e5e3e4, #f7f8fa);
+    -fx-border-style: solid;
+    -fx-border-color: #999;
+    -fx-border-width: 2px;
+    -fx-font-weight: bolder;
+    -fx-text-alignment: center;
+}
+root { 
+    display: block;
+}
+#topright {
+    -fx-background-image: url("img1.png");
+}
+#c1, #c2 {
+     
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+
+    -fx-text-fill: #707070;
+    -fx-font-size: 14px;
+}
+#c2 { -fx-background-color: #EBECEC; -fx-border-color: #B2B3B3; }
+#c1 { -fx-background-color: transparent; -fx-background-image: url("esquina.png"); }
+#c2:hover {
+     -fx-background-color: #E5E4E5;
+}
+#c1:hover { -fx-background-color: transparent; -fx-background-image: url("esquina2.png"); }
+#descripcion {
+    -fx-padding: 10;    
+}
+#avatar {
+    -fx-background-image: url("http://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/173122_566628481_2070138688_q.jpg");
+}
+#nombre {
+    -fx-font-size: 16px;
+}
+#titulo {
+    -fx-font-size: 26px;
+    -fx-text-fill: #707070;
+    -fx-font-family: Cambria;
+}
